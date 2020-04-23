@@ -8,3 +8,7 @@ before_install:
 
 script:
   - docker run rantdocker/docker-react npm run test -- --coverage
+
+env:
+  global:
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
