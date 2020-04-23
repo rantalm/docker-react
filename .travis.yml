@@ -7,8 +7,7 @@ before_install:
   - docker build -t rantdocker/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run rantdocker/docker-react npm run test -- --coverage
-
-env:
-  global:
-    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - docker run -e CI=true rantdocker/docker-react npm run test -- --coverage
+# env:
+#   global:
+#     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
